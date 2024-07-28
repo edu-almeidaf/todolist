@@ -36,6 +36,11 @@
   outline: 1px solid var(--blue);
 }
 
-.addTask button[type="submit"]:hover {
+.addTask button[type="submit"]:not(:disabled):hover {
   background-color: var(--blue);
+}
+
+.addTask button[type="submit"]:disabled {
+  opacity: 70%;
+  cursor: not-allowed;
 }
