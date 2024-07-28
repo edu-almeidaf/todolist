@@ -1,0 +1,42 @@
+.task {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  border-radius: 0.75rem;
+}
+  
+.taskContent {
+  flex: 1;
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.deleteTask {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-300);
+  transition: color 0.1s;
+  border-radius: 0.25rem;
+}
+
+.deleteTask:hover { 
+  background-color: var(--gray-400);
+  color: var(--danger);
+}
+
+.deleteTask:focus {
+  outline: 2px solid var(--gray-400);
+}
