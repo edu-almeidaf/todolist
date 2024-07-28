@@ -1,6 +1,7 @@
 import { PlusCircle } from 'phosphor-react'
 import styles from './app.module.css'
 import { Logo } from './assets/logo'
+import { Clipboard } from './assets/clipboard'
 
 export function App() {
   return (
@@ -33,6 +34,16 @@ export function App() {
               <p>Concluídas</p>
               <div className={styles.counter}>
                 <span>0</span>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.tasksContainer}>
+            <div className={styles.emptyState}>
+              <Clipboard />
+              <div className={styles.emptyMessages}>
+                <p>Você ainda não tem tarefas cadastradas</p>
+                <p>Crie tarefas e organize seus ítems a fazer</p>
               </div>
             </div>
           </div>
