@@ -43,7 +43,7 @@ main {
 }
 
 .addTask input:focus {
-  border: 1px solid var(--purple-dark);
+  outline: 1px solid var(--purple-dark);
 }
 
 .addTask button[type="submit"] {
@@ -58,6 +58,10 @@ main {
   align-items: center;
   gap: 0.5rem;
   transition: background-color 0.1s;
+}
+
+.addTask button[type="submit"]:focus {
+  outline: 1px solid var(--blue);
 }
 
 .addTask button[type="submit"]:hover {
@@ -106,11 +110,8 @@ main {
   font-size: 0.75rem;
 }
 
-.tasksContainer {
-  border-top: 1px solid var(--gray-400);
-}
-
 .emptyState {
+  border-top: 1px solid var(--gray-400);
   padding: 4rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -125,4 +126,103 @@ main {
 
 .emptyMessages p:first-child {
   font-weight: 700;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.task {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  border-radius: 0.75rem;
+}
+
+.checkboxContainer {
+  padding: 3px;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 2px solid var(--blue-dark);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+input[type="checkbox"]:not(:checked):hover {
+  border-color: var(--blue);
+}
+
+input[type="checkbox"]:not(:checked):focus {
+  outline: 2px solid var(--blue-dark);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--purple-dark);
+  border-color: var(--purple-dark);
+}
+
+input[type="checkbox"]:checked:hover {
+  background-color: var(--purple);
+  border-color: var(--purple);
+}
+
+input[type="checkbox"]:checked::before {
+  content: '\2713';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+input[type="checkbox"]:checked:focus {
+  outline: 1px solid var(--purple-dark);
+}
+  
+
+.taskContent {
+  flex: 1;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.deleteTask {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-300);
+  transition: color 0.1s;
+  border-radius: 0.25rem;
+}
+
+.deleteTask:hover { 
+  background-color: var(--gray-400);
+  color: var(--danger);
+}
+
+.deleteTask:focus {
+  outline: 2px solid var(--gray-400);
 }
